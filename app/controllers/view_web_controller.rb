@@ -1,5 +1,6 @@
 class ViewWebController < ApplicationController
   def home
+    @products = Product.joins("INNER JOIN ranks ON product_id = products.id").limit(12).order("star_level desc")
   end
 
   def about

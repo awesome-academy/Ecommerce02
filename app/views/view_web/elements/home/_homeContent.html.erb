@@ -162,5 +162,84 @@
       </div>
     </section>
   </div>
+    <div id="shopify-section-1480804649554" class="shopify-section index-section">
+    <!-- featured products -->
+    <section class="content" data-section-id="1480804649554" data-section-type="featuredproducts-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-xl-12">
+            <div class="title-box">
+              <h2 class="text-left text-uppercase title-under">
+                <%= t("homeContent.str17") %>
+              </h2>
+            </div>
+            <!-- /title -->
+            <div class="product-listing carousel-products-mobile row featprod-js-1480804649554">
+              <% @products.each do |product| %>
+              <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-2">
+                <!-- product -->
+                <div class="product product--zoom smallproduct 31530898636">
+                  <div class="product__inside">
+                    <!-- product image -->
+                    <div class="product__inside__image">
+                      <a href="/products/black-cap">
+                        <%= image_tag(product.image, :alt => "Black Cap") %>
+                      </a>
+                      <a href="javascript:void(0);" onclick="quiqview('black-cap')"
+                      class="quick-view">
+                        <b>
+                          <span class="icon icon-visibility"></span> Quick View
+                        </b>
+                      </a>
+                    </div>
+                    <div class="product__inside__name">
+                      <h2 class="product_title">
+                        <a href="/products/black-cap"><%= product.name %></a>
+                      </h2>
+                    </div>
+                    <!-- /product name -->
+                    <!-- product description -->
+                    <!-- visible only in row-view mode -->
+                    <div class="product__inside__description row-mode-visible">
+                      <%= product.description_long %>
+                    </div>
+                    <!-- /product description -->
+                    <!-- product price -->
+                    <div class="product__inside__price price-box baseprice">
+                      <span class=money><%= product.price_out %></span>
+                    </div>
+                    <!-- /product price -->
+                    <!-- product review -->
+                    <!-- visible only in row-view mode -->
+                    <div class="product__inside__review row-mode-visible">
+                      <div class="rating row-mode-visible">
+                        <span class="shopify-product-reviews-badge" data-id="9097940108"></span>
+                      </div>
+                    </div>
+                    <!-- /product review -->
+                    <div class="product__inside__hover">
+                      <!-- product info -->
+                      <div class="product__inside__info">
+                        <div class="product__inside__info__btns"> <a href="javascript:void(0);" onclick="Shopify.addItem(31530898636, 1); return false;"
+                          class="btn btn--ys btn--xl addtocart-js"><span class="icon icon-shopping_basket"></span> <%= t("after-footer.str10") %></a>
+                          <a href="javascript:void(0);" onclick="quiqview('black-cap')"
+                          class="btn btn--ys btn--xl  row-mode-visible hidden-xs"><span class="icon icon-visibility"></span> <%= t("quick_view") %></a>
+                        </div>
+                        <div class="custom__info__link hidden-xs"></div>
+                      </div>
+                      <!-- /product info -->
+                    </div>
+                  </div>
+                </div>
+                <!-- /product -->
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end featured products -->
+  </div>
   <!-- END content_for_index -->
 </div>
