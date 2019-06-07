@@ -1,0 +1,7 @@
+user:
+  address_max_length: 200
+  name_length: 50
+  email_length: 255
+  pass_length: 6
+  phone_number_length: 11
+

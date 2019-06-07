@@ -11,7 +11,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.float :price_out
       t.float :price_sale
       t.integer :status, null: false, default: 0
-      t.references :small_categories, foreign_key: true
+      t.references :small_category, foreign_key: true
 
       t.timestamps
     end

@@ -9,10 +9,31 @@
           <div class="settings">
             <div class="account-row-list mobile-menu-off" style="display: inline-block;">
               <ul>
-                <li><a href="/view_web/account"><span class="icon icon-person"></span><%= t("header-wrapper.str1") %></a> </li>
-                <li><a href="/view_web/checkout"><span class="icon icon-done_all"></span><%= t("header-wrapper.str2") %></a> </li>
-                <li><a href="/view_web/account/login"><span class="icon icon-lock"></span><%= t("header-wrapper.str3") %></a> </li>
+                <% if logged_in? %>
+                  <li><%= link_to "Users", '#' %></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <%= t("header-wrapper.str1") %> <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><%= link_to "Profile", current_user %></li>
+                      <li><%= link_to "Settings", '#' %></li>
+                      <li class="divider"></li>
+                      <li>
+                        <%= link_to "Log out", view_web_account_logout_path, method: :delete %>
+                      </li>
+                    </ul>
+                  </li>
+                <% else %>
+                  <li>
+                    <a>
+                      <span class="icon icon-lock"></span>
+                      <%= link_to t("header-wrapper.str3"), view_web_account_login_path %>
+                    </a>
+                  </li>
+                <% end %>
                 <li><a href="/view_web/account/register"><span class="icon icon-person_add"></span><%= t("header-wrapper.str4") %></a> </li>
+
               </ul>
             </div>
             <!-- shopping cart start -->
@@ -142,7 +163,8 @@
                           <div class="cart__item__control">
                             <div class="cart__item__delete"><a href="javascript:void(0);" onclick="Shopify.removeItem(31530899532)" class="icon icon-delete"><span><%= t("header-wrapper.str9") %></span></a> </div>
                             <div
-                            class="cart__item__edit"><a href="/products/paul-smith-blazer?variant=31530899532" class="icon icon-edit"><span><%= t("header-wrapper.str10") %></span></a> </div>
+                            class="cart__item__edit"><a href="/products/paul-smith-blazer?variant=31530899532" class="icon icon-edit"><span><%= t("header-wrapper.str10") %></span></a>
+                          </div>
                     </div>
                     <div class="cart__item__info">
                       <div class="cart__item__info__title">
@@ -165,6 +187,5 @@
         </div>
       </div>
     </div>
-</div>
-</header>
+  </header>
 </div>

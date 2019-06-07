@@ -1,0 +1,86 @@
+<div id="pageContent" class="starthide">
+
+  <div class="container">
+    <!-- title -->
+    <div class="title-box">
+      <h1 class="text-center text-uppercase title-under"><%= t("loginContent.str1") %></h1>
+    </div>
+    <!-- /title -->
+    <div class="row">
+
+      <section class="col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xl-offset-2">
+        <div class="login-form-box">
+          <h3 class="color small"><%= t("loginContent.str2") %></h3>
+          <p><%= t("loginContent.str3") %></p>
+          <br>
+          <a class="btn btn--ys btn--xl" href="/view_web/account/register"><span class="icon icon-person_add"></span><%= t("loginContent.str4") %></a>
+        </div>
+      </section>
+      <div class="divider divider--md visible-sm visible-xs"></div>
+
+      <section class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
+        <div class="login-form-box">
+          <div id="login">
+            <h3 class="color small"><%= t("loginContent.str5") %></h3>
+            <p><%= t("loginContent.str6") %></p>
+
+            <%= form_for(:session, url: "/view_web/account/login") do |f| %>
+              <input type="hidden" name="form_type" value="customer_login" />
+              <input type="hidden" name="utf8" value="✓" />
+              <div class="form-group">
+                <%= f.label :email, t("loginContent.str7") %>
+                <%= f.email_field :email, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :passwordemail, t("loginContent.str8") %>
+                <%= f.password_field :password, class: "form-control" %>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                  <%= f.submit t("loginContent.str9"), class: "btn btn-primary" %>
+                </div>
+              </div>
+            <% end %>
+              <p class="btn-top"><a href="#" onclick="showRecoverPasswordForm();return false;" class="link-color"><%= t("loginContent.str11") %></a>
+              </p>
+          </div>
+
+          <div id="recover-password" style="display:none;" class="wrap">
+            <h3><%= t("loginContent.str12") %></h3>
+            <p class="note"><%= t("loginContent.str13") %></p>
+
+            <form method="post" action="/account/recover" accept-charset="UTF-8">
+              <input type="hidden" name="form_type" value="recover_customer_password" />
+              <input type="hidden" name="utf8" value="✓" />
+
+
+              <div class="form-group">
+                <label for="email"><%= t("loginContent.str14") %><sup>*</sup>
+                </label>
+                <input type="email" name="email" class="form-control" id="email" autocorrect="off"
+                autocapitalize="off">
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                  <button type="submit" class="btn btn--ys btn-top btn--xl">
+                    <%= t("loginContent.str15") %></button>
+                  <div class="cancel-bottom">
+                    &nbsp;or
+                    <a href="#" onclick="hideRecoverPasswordForm();return false;">
+                      <%= t("loginContent.str16") %></a>
+                  </div>
+                </div>
+                <div class="divider divider--md visible-xs"></div>
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                  <div class="pull-right note btn-top"><%= t("loginContent.str10") %></div>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

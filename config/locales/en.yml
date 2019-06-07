@@ -1,40 +1,10 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   base_title: "FAshop - Ecommerce02"
   collections: "Content Page Collections"
   cart: "Content Page Cart"
   account: "Content Page Account"
   product: "Content Page Product"
+  welcome: Welcome to FAshop
   view_admin:
     home:
       title: "Home Admin"
@@ -59,6 +29,12 @@ en:
       title: "FAshop - Register"
   lable:
     contacts: "Contacts"
+  users:
+    new:
+      title: "FAshop - Register"
+  sessions:
+    new:
+      title: "FAshop - Login"
   footer:
     str1: "16 St. Ly Thuong Kiet, Da Nang"
     str2: "0787073046"
@@ -131,6 +107,8 @@ en:
     str16: "Home"
     str17: "Collections"
     str18: "About"
+    str19: "Profile"
+    str20: "Settings"
   menu:
     str1: "close"
     str2: "Home"
@@ -203,13 +181,15 @@ en:
   registerContent:
     str1: "CREATE AN ACCOUNT"
     str2: "PERSONAL INFORMATION"
-    str3: "First Name"
-    str4: "Last Name"
-    str5: "Email"
-    str6: "Password"
+    str3: "Name"
+    str4: "Email"
+    str5: "Password"
+    str6: "Confirmation"
     str7: "Create"
     str8: "Return to Store"
     str9: "* Required Fields"
+    str10: "Phone"
+    str11: "Address"
   adminMenu:
     str1: "FAshop"
     str2: "Online"
@@ -229,3 +209,7 @@ en:
     str4: "Product total"
     str5: "Order total"
     str6: "More"
+  errors:
+    nil_user: "User not found"
+    msg1: "Invalid email/password combination"
+    msg2: "can't be empty"
