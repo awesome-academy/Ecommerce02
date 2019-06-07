@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>t("title")</title>
+    <title><%= full_title yield(:title) %></title>
+
+    <!-- meta -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- favicon -->
+    <link rel="canonical" href="http://localhost:3000/" />
+    <link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/1637/5229/t/4/assets/favicon.png?0"type="image/x-icon" />
+
+    <!-- CSS -->
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <link href="//cdn.shopify.com/s/files/1/1637/5229/t/4/assets/stylefont.css?0"
+    rel="stylesheet" type="text/css" media="all" />
+
+    <!-- JS -->
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+    <script id="shopify-features" type="application/json">
+        {"accessToken":"325e0547523f4d354305ef1c696610ce","betas":[],"domain":"fashop-default.myshopify.com","predictiveSearch":false,"shopId":16375229,"smart_payment_buttons_url":"https:\/\/cdn.shopifycloud.com\/payment-sheet\/assets\/latest\/spb.en.js","dynamic_checkout_cart_url":"https:\/\/cdn.shopifycloud.com\/payment-sheet\/assets\/latest\/dynamic-checkout-cart.en.js"}
+    </script>
+
   </head>
 
   <body>

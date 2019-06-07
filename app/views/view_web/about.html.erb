@@ -1,0 +1,32 @@
+    <% provide(:title, t(".title")) %>
+    <div class="back-to-top">
+      <span class="icon-keyboard_arrow_up"></span>
+    </div>
+
+    <%=render "view_web/elements/menu" %>
+
+    <%=render "view_web/elements/header-wrapper" %>
+
+    <section class="breadcrumbs">
+      <div class="container">
+        <ol class="breadcrumb breadcrumb--ys pull-left">
+          <li class="home-link">
+            <a href="/" class="icon icon-home"></a>
+          </li>
+
+          <li>
+            <span>About</span>
+          </li>
+        </ol>
+
+      </div>
+    </section>
+
+    <%=render "view_web/elements/about/aboutContent" %>
+
+
+    <%=render "view_web/elements/footer" %>
+
+
+    <%=render "view_web/elements/after-footer" %>
+

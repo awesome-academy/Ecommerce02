@@ -1,0 +1,110 @@
+<div id="pageContent" class="starthide">
+
+
+
+  <!-- map -->
+  <section class="content-bottom">
+    <div id="map"></div>
+  </section>
+  <!-- /map -->
+  <section class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-12">
+        <h2 class="text-uppercase title-bottom"><%= t("contactsContent.str1") %></h2>
+        <ul class="list-icon">
+          <li>
+            <span class="icon icon-home"></span> <strong><%= t("contactsContent.str2") %></strong>
+            <%= t("footer.str1") %>
+          </li>
+          <li>
+            <span class="icon icon-call"></span> <strong><%= t("contactsContent.str3") %></strong>
+            <%= t("footer.str2") %>
+          </li>
+          <li>
+            <span class="fa fa-fax"></span> <strong><%= t("contactsContent.str4") %></strong> <%= t("contactsContent.str7") %>
+          </li>
+          <li>
+            <span class="icon icon-schedule"></span> <strong><%= t("contactsContent.str5") %></strong>
+            <%= t("footer.str3") %>
+          </li>
+          <li>
+            <span class="icon icon-mail"></span> <strong><%= t("contactsContent.str6") %></strong>
+            <a class="color" href="mailto:info@mydomain.com"><%= t("footer.str4") %>
+            </a>
+          </li>
+        </ul>
+        <div class="divider divider--sm"></div>
+        <div class="social-links social-links--large">
+          <ul>
+            <li>
+              <a class="icon fa fa-facebook" href="#"></a>
+            </li>
+            <li>
+              <a class="icon fa fa-twitter" href="#"></a>
+            </li>
+            <li>
+              <a class="icon fa fa-google-plus" href="#"></a>
+            </li>
+            <li>
+              <a class="icon fa fa-instagram" href="#"></a>
+            </li>
+            <li>
+              <a class="icon fa fa-youtube-square" href="#"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="divider divider--lg visible-xs"></div>
+        <h2 class="text-uppercase title-bottom"><%= t("contactsContent.str8") %></h2>
+        <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8"
+        class="contact-form">
+          <input type="hidden" name="form_type" value="contact" />
+          <input type="hidden" name="utf8" value="✓" />
+
+
+
+          <!-- input -->
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputName"><%= t("contactsContent.str9") %> <sup>*</sup>
+                </label>
+                <input name="contact[name]" type="text" class="form-control" id="inputName">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputEmail"><%= t("contactsContent.str10") %> <sup>*</sup>
+                </label>
+                <input name="contact[email]" type="email" class="form-control" id="inputEmail">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="inputPhone"><%= t("contactsContent.str11") %> <sup>*</sup>
+                </label>
+                <input name="contact[phone]" type="tel" class="form-control" id="inputPhone">
+              </div>
+            </div>
+          </div>
+          <!-- /input -->
+          <!-- textarea -->
+          <div class="form-group">
+            <label for="textareaMessage"><%= t("contactsContent.str12") %> <sup>*</sup>
+            </label>
+            <textarea name="contact[body]" class="form-control" rows="12" id="textareaMessage"></textarea>
+          </div>
+          <!-- /textarea -->
+          <!-- button -->
+          <div class="pull-right note"><%= t("contactsContent.str13") %></div>
+          <button class="btn btn--ys btn--xl btn-top" type="submit">
+            <%= t("contactsContent.str14") %>
+
+            </button>
+          <!-- /button -->
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
