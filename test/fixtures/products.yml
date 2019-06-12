@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description_sort: MyString
+  description_long: MyText
+  image: MyString
+  color: MyString
+  size: MyString
+  price_in: 1.5
+  price_out: 1.5
+  price_sale: 1.5
+  status: 1
+  small_category: one
+
+two:
+  name: MyString
+  description_sort: MyString
+  description_long: MyText
+  image: MyString
+  color: MyString
+  size: MyString
+  price_in: 1.5
+  price_out: 1.5
+  price_sale: 1.5
+  status: 1
+  small_category: two

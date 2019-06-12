@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_order: 2019-06-12 10:13:38
+  address: MyString
+  note: MyString
+  status: 1
+  users: one
+
+two:
+  date_order: 2019-06-12 10:13:38
+  address: MyString
+  note: MyString
+  status: 1
+  users: two

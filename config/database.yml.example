@@ -1,0 +1,20 @@
+default: &default
+  adapter: mysql2
+  pool: 5
+  encoding: utf8
+  username: username
+  password: password
+  host: 127.0.0.1
+  port: 3306
+
+development:
+  <<: *default
+  database: development_db_name
+
+test:
+  <<: *default
+  database: test_db_name
+
+production:
+  <<: *default
+  database: production_db_name
