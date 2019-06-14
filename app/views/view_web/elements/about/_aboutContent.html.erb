@@ -1,0 +1,77 @@
+<div id="pageContent" class="starthide">
+  <!-- CONTENT section -->
+  <!-- parallax-img -->
+  <section class="content--parallax content--parallax-sm offset-top-0" data-image="https://cdn.shopify.com/s/files/1/1236/4838/files/parallax-img-05.jpg?3685569274316051182">
+    <div class="content  offset-top-0">
+      <div class="container">
+        <div class="parallax-text">
+          <div class="block-table">
+            <div class="block-table-cell text-center">
+              <h6 class="font50 color-white"><%= t("aboutContent.str1") %></h6>
+              <div class="divider divider--xs"></div>
+              <p class="font30 color-white"><%= t("aboutContent.str2") %>
+              </p>
+              <div class="divider divider--xs"></div>
+              <span class="bull-line"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+    <div class="container">
+      <!-- title -->
+      <div class="title-box">
+        <h2 class="text-center title-under"><%= t("aboutContent.str3") %></h2>
+      </div>
+      <!-- /title -->
+      <div class="row">
+
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <a class="link-img-hover1" href="#">
+            <%= image_tag("Web/ducvinh.jpg", :alt => "", :class => "img-responsive") %>
+          </a>
+          <div class="divider divider--md1"></div>
+          <p>
+            <a class="hover-effect-01" href="#">
+              <span class="font22 text-uppercase color-custom">
+                <%= t("aboutContent.str4") %>
+              </span>
+              <span class="font18 color-dark"> -
+                <em class="main-font">
+                <%= t("aboutContent.str6") %>
+                </em>
+              </span>
+            </a>
+          </p>
+          <p><%= t("aboutContent.str7") %></p>
+        </div>
+        <div class="divider divider--lg visible-sm visible-xs"></div>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <a class="link-img-hover1" href="#">
+            <%= image_tag("Web/minhhau1.jpg", :alt => "", :class => "img-responsive")%>
+          </a>
+          <div class="divider divider--md1"></div>
+          <p>
+            <a class="hover-effect-01" href="#">
+              <span class="font22 text-uppercase color-custom">
+                <%= t("aboutContent.str5") %>
+              </span>
+              <span class="font18 color-dark">  -
+                <em class="main-font">
+                  <%= t("aboutContent.str6") %>
+                </em>
+              </span>
+            </a>
+          </p>
+          <p><%= t("aboutContent.str8") %></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- / -->
+  <!-- End CONTENT section -->
+</div>

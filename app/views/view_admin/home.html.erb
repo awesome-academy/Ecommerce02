@@ -1,0 +1,73 @@
+<% provide(:title, t( ".title")) %>
+  <div class="wrapper">
+    <header class="main-header">
+      <a href="/test/public/" class="logo">
+        <span class="logo-mini"><b><%= t("adminHome.str1") %></b></span>
+        <span class="logo-lg">
+          <%= image_tag("Admin/img/scart-min.png", :alt => "img") %>
+        </span>
+      </a>
+      <nav class="navbar navbar-static-top" role="navigation">
+        <%=render "view_admin/elements/NavbarRightMenu" %>
+      </nav>
+    </header>
+    <%=render "view_admin/elements/menu" %>
+      <div class="content-wrapper" id="pjax-container">
+        <section class="content-header">
+          <h1> <%= t("adminHome.str2") %>
+            <small> </small>
+          </h1>
+        </section>
+        <section class="content">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="small-box bg-aqua">
+                <div class="inner">
+                  <h3>26</h3>
+                  <p><%= t("adminHome.str3") %></p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-tags"></i>
+                </div>
+                <a href="/admin" class="small-box-footer">
+                  <%= t("adminHome.str6") %>&nbsp;
+                  <i class="fa fa-arrow-circle-right"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="small-box bg-green">
+                <div class="inner">
+                  <h3>102</h3>
+                  <p><%= t("adminHome.str4") %></p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-group"></i>
+                </div>
+                <a href="/admin" class="small-box-footer">
+                  <%= t("adminHome.str6") %>&nbsp;
+                  <i class="fa fa-arrow-circle-right"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="small-box bg-yellow">
+                <div class="inner">
+                  <h3>201</h3>
+                  <p><%= t("adminHome.str5") %></p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-user"></i>
+                </div>
+                <a href="/admin" class="small-box-footer">
+                  <%= t("adminHome.str6") %>&nbsp;
+                  <i class="fa fa-arrow-circle-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+  </div>
+

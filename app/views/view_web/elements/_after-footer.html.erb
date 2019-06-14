@@ -1,0 +1,129 @@
+<div class="modal fade" id="modalAddToCart" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog white-modal modal-sm">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center"> <span class="productmsg"><%= t("after-footer.str1") %></span><%= t("after-footer.str2") %> </div>
+        </div>
+        <div class="modal-footer text-center"> <a href="/cart" class="btn btn--ys btn--full btn--lg"><%= t("after-footer.str3") %></a> </div>
+      </div>
+    </div>
+  </div>
+  <!-- /modalAddToCart -->
+  <!-- modalAddToCart Error -->
+  <div class="modal fade" id="modalAddToCartError" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog white-modal modal-sm">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center error_message"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal  modal--bg fade" id="quickViewModal">
+    <div class="modal-dialog white-modal">
+      <div class="modal-content container">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="icon icon-clear"></span>
+          </button>
+        </div>
+        <!--  -->
+        <div class="product-popup">
+          <div class="product-popup-content">
+            <div class="container-fluid">
+              <div class="row product-info-outer">
+                <div class="col-xs-12 col-sm-5 col-md-6 col-lg-6">
+                  <div class="product-main-image">
+                    <div class="product-main-image__item">
+                      <div class="img_box_1"></div>
+                      <div class="img_box_2"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-info col-xs-12 col-sm-7 col-md-6 col-lg-6">
+                  <div class="wrapper qwt">
+                    <div class="product-info__sku pull-left"><%= t("after-footer.str4") %><strong class='product-sku'><%= t("after-footer.str5") %></strong>
+                    </div>
+                    <div class="product-info__availabilitu pull-right"><%= t("after-footer.str6") %><strong class='product-availability'><%= t("after-footer.str5") %></strong>
+                    </div>
+                  </div>
+                  <div class="product-info__title">
+                    <h2 class="product_title"><%= t("after-footer.str7") %></h2> </div>
+                  <div class="price-box product-info__price price-part">
+                  <span class="price-box__new"><%= t("after-footer.str8") %></span> <span class="main"><%= t("after-footer.str8") %></span>                    </div>
+                  <div class="product-info__review">
+                    <div class="rating"><span class="shopify-product-reviews-badge" data-id=""></span>
+                    </div>
+                  </div>
+                  <div class="product-desc-holder">
+                    <div class="divider divider--xs product-info__divider"></div>
+                    <div class="product-info__description product-desc"><%= t("after-footer.str7") %></div>
+                  </div>
+                  <div class="divider divider--xs product-info__divider"></div>
+                  <div class="product-available">
+                    <form id="add-item-qv" action="/cart/add" method="post">
+                      <div class="variants"></div>
+                      <div class="divider divider--sm"></div>
+                      <div class="wrapper">
+                        <div class="pull-left control-console"><span class="qty-label"><%= t("after-footer.str9") %></span>
+                        </div>
+                        <div class="pull-left control-console">
+                          <input type="text" name="quantity" class="input--ys qty-input pull-left"
+                          value="1">
+                        </div>
+                        <div class="pull-left">
+                          <button type="submit" class="btn btn--ys btn--xxl addtocartqv"><span class="icon icon-shopping_basket"></span> <%= t("after-footer.str10") %></button>
+                        </div>
+                      </div>
+                      <script>
+                        jQuery('.addtocartqv').click(function(e) {
+                          e.preventDefault();
+                          Shopify.addItemFromFormStart('add-item-qv',
+                            jQuery(this).attr('id'));
+                        });
+                      </script>
+                    </form>
+                  </div>
+                  <div class="product-disable">
+                    <button disabled class="btn btn--ys btn--xxl"><%= t("after-footer.str11") %></button>
+                  </div>
+                  <div class="divider divider--sm"></div> <a href="" class="viewfullinfo"><%= t("after-footer.str12") %></a> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- / -->
+      </div>
+    </div>
+  </div>
+  <div class="quickViewModal_info" style="display: none;">
+    <div class="button"><span class="icon icon-shopping_basket"></span> <%= t("after-footer.str10") %></div>
+    <div class="button_added"><span class="icon icon-shopping_basket"></span> <%= t("after-footer.str13") %></div>
+    <div class="button_error"><span class="icon icon-shopping_basket"></span> <%= t("after-footer.str14") %></div>
+    <div class="button_wait"><span class="icon icon-shopping_basket"></span> <%= t("after-footer.str15") %></div>
+  </div>
+  <div id="custom-preloader">
+    <div class="custom-loader" style="display: none;">
+      <img width="32" height="32" alt="" src="//cdn.shopify.com/s/files/1/1637/5229/t/4/assets/ajax-loader.gif?0">
+    </div>
+  </div>
+  <div class="cart_messages" style="display:none">
+    <div class="edit"><%= t("after-footer.str16") %></div>
+    <div class="delete"><%= t("after-footer.str17") %></div>
+    <div class="price"><%= t("after-footer.str18") %></div>
+    <div class="qty"><%= t("after-footer.str19") %></div>
+  </div>
+  <div class="button_massage" style="display:none"><span class="icon icon-shopping_basket"></span> <%= t("after-footer.str10") %></div>
+  <div class="rtlbutton">
+    <div class="box-btn color-2"><span><%= t("after-footer.str20") %></span><span class="rtl_button"><%= t("after-footer.str21") %></span>
+    </div>
+  </div>
+
+

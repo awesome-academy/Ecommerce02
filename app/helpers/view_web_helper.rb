@@ -1,0 +1,2 @@
+module ViewWebHelper
+end

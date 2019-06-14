@@ -1,0 +1,27 @@
+<div class="navbar-custom-menu">
+  <ul class="nav navbar-nav">
+    <!-- User Account Menu -->
+    <li class="dropdown user user-menu">
+      <!-- Menu Toggle Button -->
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <%=image_tag( "Admin/img/user2-160x160.jpg", :alt=> "User Image") %> <span class="hidden-xs"><%= t("adminMenu.str1") %></span> </a>
+      <ul class="dropdown-menu">
+        <!-- The user image in the menu -->
+        <li class="user-header">
+          <%=image_tag( "Admin/img/user2-160x160.jpg", :alt=> "User Image") %> </li>
+        <li class="user-footer">
+          <div class="pull-left">
+            <a href="/admin/setting">
+              <%=t ( "adminMenu.str10") %>
+            </a>
+          </div>
+          <div class="pull-right">
+            <a href="/amdin/logout">
+              <%=t ( "adminMenu.str11") %>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
