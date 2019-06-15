@@ -3,7 +3,7 @@ default: &default
   pool: 5
   encoding: utf8
   username: root
-  password: ducvinh26091997
+  password: minhau1201
   host: 127.0.0.1
   port: 3306
 

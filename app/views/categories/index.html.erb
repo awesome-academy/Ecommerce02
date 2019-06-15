@@ -1,0 +1,68 @@
+<% provide(:title, t( ".title")) %>
+  <div class="wrapper">
+    <header class="main-header">
+      <a href="/test/public/" class="logo">
+        <span class="logo-mini"><b><%= t("adminHome.str1") %></b></span>
+        <span class="logo-lg">
+          <%= image_tag("Admin/img/scart-min.png", :alt => "img") %>
+        </span>
+      </a>
+      <nav class="navbar navbar-static-top" role="navigation">
+        <%=render "view_admin/elements/NavbarRightMenu" %>
+      </nav>
+    </header>
+    <%=render "view_admin/elements/menu" %>
+    <div class="content-wrapper" id="pjax-container">
+      <section class="content-header">
+        <h1><%= t ".str1"%></h1>
+        <!-- breadcrumb start -->
+        <!-- breadcrumb end -->
+      </section>
+      <section class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="box">
+              <div class="box-header with-border">
+                <div class="pull-right">
+                  <div class="btn-group pull-right" style="margin-right: 10px">
+                    <a href= <%= new_category_path %> class="btn btn-sm btn-success" title="New"> <i class="fa fa-save"></i><span class="hidden-xs">&nbsp;&nbsp;<%= t ".new" %></span> </a>
+                  </div>
+                </div> 
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th><%= t ".id" %></th>
+                      <th><%= t ".namecategory" %></th>
+                      <th><%= t ".description" %></th>
+                      <th><%= t ".action" %></th>
+                    </tr>
+                  </thead>
+                  <tbody> 
+                    <% @categories.each do |category| %>
+                      <tr>
+                        <td><%= category.id %></td>
+                        <td><%= category.name %></td>
+                        <td><%= category.description %></td>
+                        <td>
+                          <a title="Show Customer detail" href= <%= edit_category_path(category) %> > 
+                            <i class="fa fa-edit"></i> 
+                          </a>
+                          <a href= <%= category_path(category)%> data-method = "delete" data-confirm = "Bạn có chắc chắn xóa?" >                       
+                            <i class="fa fa-trash"> </i>                           
+                          </a>
+                        </td>
+                      </tr> 
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.box-body -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>

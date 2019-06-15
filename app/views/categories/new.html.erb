@@ -1,0 +1,40 @@
+<% provide(:title, t( ".title")) %>
+  <div class="wrapper">
+    <header class="main-header">
+      <a href="/test/public/" class="logo">
+        <span class="logo-mini"><b><%= t("adminHome.str1") %></b></span>
+        <span class="logo-lg">
+          <%= image_tag("Admin/img/scart-min.png", :alt => "img") %>
+        </span>
+      </a>
+      <nav class="navbar navbar-static-top" role="navigation">
+        <%=render "view_admin/elements/NavbarRightMenu" %>
+      </nav>
+    </header>
+    <%=render "view_admin/elements/menu" %>
+    <div class="content-wrapper" id="pjax-container">
+      <section class="content-header">
+        <h1><%= t ".str1" %></h1>
+        <!-- breadcrumb start -->
+        <!-- breadcrumb end -->
+      </section>
+      <section class="content">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="box box-info">
+              <div class="box-header with-border">
+                <h3 class="box-title"><%= t ".str2" %></h3>
+                <div class="box-tools">
+                  <div class="btn-group pull-right" style="margin-right: 5px"> <a href= <%= categories_path %> class="btn btn-sm btn-default" title="List"><i class="fa fa-list"></i><span class="hidden-xs">&nbsp;<%= t ".list" %></span></a> </div>
+                </div>
+              </div>
+              <!-- /.box-header -->
+              <!-- form start -->
+              <%=render "categories/form" %>
+            </div>
+          </div>
+        </div>
+      </section>
+      <%= javascript_include_tag "new" %>
+    </div>
+  </div>

@@ -22,5 +22,10 @@
 # categories = Category.create(name: "TOPS",description: "tops")
 # categories = Category.create(name: "BOTTOMS",description: "bottoms")
 # categories = Category.create(name: "ACCESSORIES",description: "accessories")
-small_categories = SmallCategory.create(small_category_name: "Blouses Shirts",
-  description: "Blouses Shirts")
+
+categories = Category.create(name: "Ao", description: "ao mat")
+categories = Category.create(name: "quan", description: "quan mat")
+
+small_categories = SmallCategory.create(small_category_name: "Ao lot", description: "de mat", category_id: 1)
+small_categories = SmallCategory.create(small_category_name: "quan lot", description: "de mat", category_id: 2)
+
