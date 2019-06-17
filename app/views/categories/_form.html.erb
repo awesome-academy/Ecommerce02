@@ -1,0 +1,27 @@
+<%= form_for @category do |f| %>
+  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+  <div class="box-body">
+  	<div class="fields-group">
+    	<div class="form-group  ">
+    		<%= f.label :name, t(".namecategory") %>
+    		<%= f.text_field :name, class: "form-control" %>
+    	</div>
+    	<div class="form-group  ">
+    		<%= f.label :description, t(".description") %>
+		    <%= f.text_field :description, class: "form-control" %>
+		  </div>
+    </div>
+  </div>
+  <!-- /.box-body -->
+  <div class="box-footer">
+    <input type="hidden" name="_token" value="YkDCfkRWPRyZTW2zQVo3IfKy3x6paUJmuFe7BBwx">
+    <div class="col-md-2"> </div>
+    <div class="col-md-8">
+      <div class="btn-group pull-right">
+        <%= f.submit t(".submit"), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" name="_previous_" value="" class="_previous_" />
+  <!-- /.box-footer -->
+<% end %>

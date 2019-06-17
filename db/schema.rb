@@ -23,8 +23,10 @@ ActiveRecord::Schema.define(version: 2019_06_12_032431) do
     t.string "content"
     t.bigint "user_id"
     t.bigint "product_id"
+    t.bigint "person_post_new_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["person_post_new_id"], name: "index_comments_on_person_post_new_id"
     t.index ["product_id"], name: "index_comments_on_product_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -106,8 +108,10 @@ ActiveRecord::Schema.define(version: 2019_06_12_032431) do
     t.integer "star_level"
     t.bigint "user_id"
     t.bigint "product_id"
+    t.bigint "person_post_new_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["person_post_new_id"], name: "index_ranks_on_person_post_new_id"
     t.index ["product_id"], name: "index_ranks_on_product_id"
     t.index ["user_id"], name: "index_ranks_on_user_id"
   end
@@ -128,13 +132,6 @@ ActiveRecord::Schema.define(version: 2019_06_12_032431) do
     t.index ["category_id"], name: "index_small_categories_on_category_id"
   end
 
-  create_table "type_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "phone"
@@ -148,6 +145,7 @@ ActiveRecord::Schema.define(version: 2019_06_12_032431) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "comments", "person_post_news", column: "person_post_new_id"
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "users"
   add_foreign_key "contacts", "users"
@@ -157,8 +155,9 @@ ActiveRecord::Schema.define(version: 2019_06_12_032431) do
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"
   add_foreign_key "orders", "users"
-  add_foreign_key "person_post_news", "users", column: "users_id"
+  add_foreign_key "person_post_news", "users"
   add_foreign_key "products", "small_categories"
+  add_foreign_key "ranks", "person_post_news", column: "person_post_new_id"
   add_foreign_key "ranks", "products"
   add_foreign_key "ranks", "users"
   add_foreign_key "small_categories", "categories"

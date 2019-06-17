@@ -1,0 +1,52 @@
+<%= form_for @small_category do |f| %>
+  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+  <div class="box-body">
+  	<div class="fields-group">
+    	<div class="form-group  ">
+    		<%= f.label :small_category_name, t(".namesmallcategory") %>
+    		<%= f.text_field :small_category_name, class: "form-control" %>
+    	</div>
+    	<div class="form-group  ">
+    		<%= f.label :description, t(".description") %>
+		    <%= f.text_field :description, class: "form-control" %>
+		  </div>
+
+      <div class="form-group  ">
+        <%= f.label :category_id, t(".namecategory") %>
+        <select id="category" onchange="categoryChanged(this)">
+          <% if @small_category.category_id? %>
+            <option value=  <%= @small_category.category_id %> ><%= @small_category.category.name %></option>
+             <% @categories.each do |category| %>
+             <% if category.id != @small_category.category_id %>
+            <option value=<%= category.id %> ><%= category.name %></option>
+            <%end%>
+          <%end%>
+          
+
+          <% else %>
+            <option value="" >--Category--</option>
+          <% @categories.each do |category| %>
+          <option value=<%= category.id %> ><%= category.name %></option>
+          <%end%>
+          <%end%>
+        </select>
+         <%= f.hidden_field :category_id, id: :small_category_category_id %>
+      </div>
+    </div>
+  </div>
+  <!-- /.box-body -->
+  <div class="box-footer">
+    <input type="hidden" name="_token" value="YkDCfkRWPRyZTW2zQVo3IfKy3x6paUJmuFe7BBwx">
+    <div class="col-md-2"> </div>
+    <div class="col-md-8">
+      <div class="btn-group pull-right">
+        <%= f.submit t(".submit"), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" name="_previous_" value="" class="_previous_" />
+  <!-- /.box-footer -->
+<% end %>
+ 
+
+<%= javascript_include_tag "small_category" %>
