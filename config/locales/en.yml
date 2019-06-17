@@ -5,6 +5,7 @@ en:
   account: "Content Page Account"
   product: "Content Page Product"
   welcome: Welcome to FAshop
+  quick_view: "Quick View"
   view_admin:
     home:
       title: "Home Admin"
@@ -159,6 +160,7 @@ en:
     str14: "Shoes"
     str15: "Sunglasses"
     str16: "Handbags"
+    str17: "HOT PRODUCTS"
   loginContent:
     str1: "ALREADY REGISTERED?"
     str2: "NEW CUSTOMER"

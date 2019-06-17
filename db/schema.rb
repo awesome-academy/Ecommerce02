@@ -76,15 +76,6 @@ ActiveRecord::Schema.define(version: 2019_06_12_032431) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "person_post_news", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.string "image"
-    t.text "description"
-    t.bigint "user_id"
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_person_post_news_on_user_id"
-  end
-
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "description_sort"
@@ -128,13 +119,6 @@ ActiveRecord::Schema.define(version: 2019_06_12_032431) do
     t.index ["category_id"], name: "index_small_categories_on_category_id"
   end
 
-  create_table "type_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "phone"
@@ -157,7 +141,6 @@ ActiveRecord::Schema.define(version: 2019_06_12_032431) do
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "products"
   add_foreign_key "orders", "users"
-  add_foreign_key "person_post_news", "users", column: "users_id"
   add_foreign_key "products", "small_categories"
   add_foreign_key "ranks", "products"
   add_foreign_key "ranks", "users"
