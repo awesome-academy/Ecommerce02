@@ -10,11 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require bootstrap
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-
-//= require_tree .
 
 //= require Admin/vendor/laravel-admin/AdminLTE/bootstrap/js/bootstrap.min.js
 //= require Admin/vendor/laravel-admin/AdminLTE/plugins/slimScroll/jquery.slimscroll.min.js

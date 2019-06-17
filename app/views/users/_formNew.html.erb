@@ -1,0 +1,49 @@
+<div id="pageContent" class="starthide">
+
+  <div class="container">
+    <!-- title -->
+    <div class="title-box">
+      <h1 class="text-center text-uppercase title-under"><%= t("registerContent.str1") %></h1>
+    </div>
+    <!-- /title -->
+    <div class="row">
+      <section class="col-sm-12 col-md-6 col-lg-6col-sm-12 col-sm-offset-0  col-md-offset-3  col-lg-offset-3 col-xl-4 col-xl-offset-4">
+        <div class="login-form-box">
+          <div id="login">
+            <h3 class="color small"><%= t("registerContent.str2") %></h3>
+            <%= form_for @user do |f| %>
+              <input type="hidden" name="form_type" value="create_customer" />
+              <input type="hidden" name="utf8" value="✓" />
+              <%= render "shared/error_messages", object: f.object%>
+              <div class="form-group">
+                <%= f.label :name, t("registerContent.str3") %>
+                <%= f.text_field :name, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :email, t("registerContent.str4") %>
+                <%= f.email_field :email, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :phone, t("registerContent.str10") %>
+                <%= f.text_field :phone, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :address, t("registerContent.str11") %>
+                <%= f.text_field :address, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :password, t("registerContent.str5") %>
+                <%= f.password_field :password, class: "form-control" %>
+              </div>
+              <div class="form-group">
+                <%= f.label :password_confirmation, t("registerContent.str6") %>
+                <%= f.password_field :password_confirmation, class: "form-control" %>
+              </div>
+              <%= f.submit t("registerContent.str7"), class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

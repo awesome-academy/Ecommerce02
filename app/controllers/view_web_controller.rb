@@ -17,9 +17,6 @@ class ViewWebController < ApplicationController
   def login
   end
 
-  def register
-  end
-
   def account
   end
 
