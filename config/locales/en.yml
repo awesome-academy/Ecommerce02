@@ -213,3 +213,5 @@ en:
     nil_user: "User not found"
     msg1: "Invalid email/password combination"
     msg2: "can't be empty"
+  chat:
+    str1: "Your feedback"
